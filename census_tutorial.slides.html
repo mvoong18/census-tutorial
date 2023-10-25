@@ -14918,7 +14918,7 @@ Census also produces Cartographic Boundary files.<ul>
 <li>ACS data: available by block group</li>
 </ul>
 </li>
-<li>There are other census geographies available other than the onees we mentioned</li>
+<li>There are other census geographies available other than the ones we mentioned</li>
 </ul>
 
 </div>
@@ -15005,7 +15005,7 @@ Census also produces Cartographic Boundary files.<ul>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Using-the-Census-API">Using the Census API<a class="anchor-link" href="#Using-the-Census-API">&#182;</a></h2><p><a href="https://www.census.gov/data/developers/data-sets.html">Here</a> are all of the publicly datasets offered by the Census Bureau. We will go over calling data from the Decennial Census.</p>
+<h2 id="Using-the-Census-API">Using the Census API<a class="anchor-link" href="#Using-the-Census-API">&#182;</a></h2><p><a href="https://www.census.gov/data/developers/data-sets.html">Here</a> are all of the publicly available datasets offered by the Census Bureau. We will go over calling data from the Decennial Census.</p>
 <p>Reference <a href="https://www.census.gov/content/dam/Census/library/publications/2020/acs/acs_api_handbook_2020_ch02.pdf">this documentation</a> to gain a better understanding of the API and how to use it.</p>
 
 </div>
@@ -15102,7 +15102,7 @@ Census also produces Cartographic Boundary files.<ul>
     <span class="n">data</span> <span class="o">=</span> <span class="n">census_response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># print column names</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># print data</span>
-<span class="k">else</span><span class="p">:</span> <span class="c1">#response was not successful</span>
+<span class="k">else</span><span class="p">:</span> <span class="c1"># response was not successful</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">'Error: '</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">census_response</span><span class="o">.</span><span class="n">status_code</span><span class="p">))</span>
 </pre></div>
 
@@ -15160,7 +15160,8 @@ Census also produces Cartographic Boundary files.<ul>
 <span class="n">tract</span> <span class="o">=</span> <span class="s1">'010103'</span>
 <span class="n">block</span> <span class="o">=</span> <span class="s1">'3011'</span>
 
-<span class="n">block_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">base_url</span><span class="si">}</span><span class="s2">?get=</span><span class="si">{</span><span class="n">cols</span><span class="si">}</span><span class="s2">&amp;for=block:</span><span class="si">{</span><span class="n">block</span><span class="si">}</span><span class="s2">&amp;in=tract:</span><span class="si">{</span><span class="n">tract</span><span class="si">}</span><span class="s2">&amp;in=county:</span><span class="si">{</span><span class="n">county</span><span class="si">}</span><span class="s2">&amp;in=state:</span><span class="si">{</span><span class="n">state</span><span class="si">}</span><span class="s2">"</span>
+<span class="n">block_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">base_url</span><span class="si">}</span><span class="s2">?get=</span><span class="si">{</span><span class="n">cols</span><span class="si">}</span><span class="s2">&amp;for=block:</span><span class="si">{</span><span class="n">block</span><span class="si">}</span><span class="s2">&amp;in=tract:</span><span class="si">{</span><span class="n">tract</span><span class="si">}</span><span class="se">\</span>
+<span class="s2">              &amp;in=county:</span><span class="si">{</span><span class="n">county</span><span class="si">}</span><span class="s2">&amp;in=state:</span><span class="si">{</span><span class="n">state</span><span class="si">}</span><span class="s2">"</span>
 <span class="n">block_response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">block_url</span><span class="p">)</span>
 <span class="n">block_data</span> <span class="o">=</span> <span class="n">block_response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">block_data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># print column names</span>
